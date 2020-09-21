@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id="SimpleBatchlet" version="1.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+
+    <step id="prepare" >
+        <batchlet ref="SimpleBatchlet"/>
+    </step>
+
+    <!--    <step id="simple-job">
+        <properties>
+            <property name="jberet.local-tx" value="true"/>
+        </properties>
+        <chunk>
+            <reader ref="SimpleItemReader"/>
+            <processor ref="SimpleItemProcessor"/>
+            <writer ref="SimpleItemWriter"/>
+        </chunk>
+    </step>-->
+    
+</job>
