@@ -32,7 +32,7 @@
                     <executable>java</executable>
                     <!-- 実行時の環境変数の設定 -->
                     <environmentVariables>
-                        <org.apache.deltaspike.ProjectStage>Development</org.apache.deltaspike.ProjectStage>
+                        <!--<org.apache.deltaspike.ProjectStage>Development</org.apache.deltaspike.ProjectStage>-->
                     </environmentVariables>
                 </configuration>
             </plugin>
@@ -206,6 +206,18 @@
             <groupId>org.apache.deltaspike.cdictrl</groupId>
             <artifactId>deltaspike-cdictrl-weld</artifactId>
             <version>${deltaspike.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-test-control-module-api</artifactId>
+            <version>${deltaspike.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-test-control-module-impl</artifactId>
+            <version>${deltaspike.version}</version>
+            <scope>test</scope>
         </dependency>
         <!-- Logging -->
         <dependency> 

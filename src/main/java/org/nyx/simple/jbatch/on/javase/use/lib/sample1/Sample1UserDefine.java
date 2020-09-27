@@ -5,15 +5,16 @@ import javax.inject.Inject;
 import org.apache.deltaspike.core.api.exclude.Exclude;
 import org.apache.deltaspike.core.api.projectstage.ProjectStage;
 import org.nyx.simple.jbatch.on.javase.use.lib.common.interceptor.ServiceOperation;
+import org.nyx.simple.jbatch.on.javase.use.spi.CustomProjectStageHolder;
 
 /**
  *
  * @author nyx
  */
 @Exclude(exceptIfProjectStage = {
-    ProjectStage.Development.class,})
+    CustomProjectStageHolder.CustomProjectStage.class,})
 @RequestScoped
-public class Sample1Service {
+public class Sample1UserDefine extends Sample1Service {
 
     @Inject
     private ProjectStage projectStage;
@@ -23,10 +24,11 @@ public class Sample1Service {
      *
      * @return UnitTestの場合trueを返却
      */
+    @Override
     @ServiceOperation
     public boolean isUnitTest() {
-        System.out.println("#Stage_DEV#" + projectStage.toString());
-        return projectStage.equals(ProjectStage.Development);
+        System.out.println("#Stage_CUSTOM#" + projectStage.toString());
+        return projectStage.equals(CustomProjectStageHolder.CustomProjectStage);
     }
 
 }
